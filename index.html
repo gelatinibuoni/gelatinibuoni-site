@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MODIFICA 5: Cambiato titolo -->
+    <title>Recensioni Buone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Usiamo un font che ricorda la scrittura a mano -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- MODIFICA 5: Cambiato H1 (mantenuta icona per stile) -->
+        <h1>🍦 Recensioni Buone 🍦</h1>
+
+        <button id="add-review-btn" class="btn btn-add">Dove hai mangiato il gelatino?</button>
+
+        <div id="review-form-container" class="form-container hidden">
+            <h2>Aggiungi una Nuova Recensione</h2>
+            <form id="gelateria-form">
+                <div class="form-group">
+                    <label for="gelateria-name">Nome Gelateria:</label>
+                    <input type="text" id="gelateria-name" required>
+                </div>
+
+                <!-- MODIFICA 1: Aggiunto campo Nome Recensore -->
+                <div class="form-group">
+                    <label for="reviewer-name">Il tuo Nome:</label>
+                    <input type="text" id="reviewer-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="maps-link">Link Google Maps (opzionale):</label>
+                    <input type="url" id="maps-link" placeholder="Incolla qui il link 'Condividi' da Google Maps">
+                </div>
+
+                <div class="form-group rating-group">
+                    <label>Varietà Gusti:</label>
+                    <div class="star-rating" data-rating-type="variety">
+                        <span data-value="1">☆</span><span data-value="2">☆</span><span data-value="3">☆</span><span data-value="4">☆</span><span data-value="5">☆</span>
+                    </div>
+                    <input type="hidden" id="variety-rating" required>
+                </div>
+
+                <div class="form-group rating-group">
+                    <label>Quanto è Buono?:</label>
+                    <div class="star-rating" data-rating-type="taste">
+                         <span data-value="1">☆</span><span data-value="2">☆</span><span data-value="3">☆</span><span data-value="4">☆</span><span data-value="5">☆</span>
+                    </div>
+                     <input type="hidden" id="taste-rating" required>
+                </div>
+
+                 <div class="form-group rating-group">
+                    <label>Voto Complessivo:</label>
+                    <div class="star-rating" data-rating-type="overall">
+                         <span data-value="1">☆</span><span data-value="2">☆</span><span data-value="3">☆</span><span data-value="4">☆</span><span data-value="5">☆</span>
+                    </div>
+                     <input type="hidden" id="overall-rating" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Panna Montata:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="panna" value="Gratis" required> Gratis ✅</label>
+                        <label><input type="radio" name="panna" value="A Pagamento"> A Pagamento 💰</label>
+                        <label><input type="radio" name="panna" value="Non presa/Non so"> Non presa / Non so 🤔</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Prezzo:</label>
+                     <div class="radio-group">
+                        <label><input type="radio" name="prezzo" value="Prezzo TOP!" required> Prezzo TOP! ✨</label>
+                        <label><input type="radio" name="prezzo" value="Onesto"> Onesto 👍</label>
+                        <label><input type="radio" name="prezzo" value="Ladrone!"> Ladrone! 💸</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Note Aggiuntive:</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-save">Salva Recensione!</button>
+                    <button type="button" id="cancel-review-btn" class="btn btn-cancel">Annulla</button>
+                </div>
+            </form>
+        </div>
+
+        <hr class="separator">
+
+        <!-- QUESTO È L'UNICO CONTENITORE PER LE RECENSIONI -->
+        <div id="reviews-list">
+            <!-- MODIFICA 5: Aggiornato titolo sezione -->
+            <h2>Le Nostre Recensioni</h2>
+            <!-- Le recensioni verranno inserite qui dal JavaScript -->
+            <p id="no-reviews-message">Nessuna recensione ancora inserita. Clicca il bottone sopra!</p>
+        </div>
+
+    </div> <!-- fine container -->
+
+    <!-- IL LINK AL FILE JAVASCRIPT VA ALLA FINE DEL BODY -->
+    <script src="script.js"></script>
+</body>
+</html>

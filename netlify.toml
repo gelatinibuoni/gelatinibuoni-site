@@ -1,0 +1,17 @@
+# File: netlify.toml
+
+[build]
+  # Directory che contiene i file statici del sito (index.html, ecc.)
+  # In questo caso è la radice del progetto, quindi non serve specificarla
+  # publish = "."
+
+  # Directory che contiene le Netlify Functions
+  functions = "netlify/functions"
+
+# Impostazione opzionale ma utile: specifica la versione di Node.js
+# Puoi trovare le versioni supportate nella documentazione Netlify
+[functions]
+  node_bundler = "esbuild"
+  [functions."*"]
+     # Usa una versione recente di Node.js
+     node_version = 18
