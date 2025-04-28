@@ -7,7 +7,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 5px 10px;
-    overflow-x: hidden; /* Previene scroll orizzontale su mobile */
+    overflow-x: hidden;
 }
 
 .container {
@@ -27,7 +27,7 @@ body {
 }
 .logo-container img {
     max-width: 500px;
-    width: 100%; /* Rende l'immagine responsiva */
+    width: 100%;
     height: auto;
     display: block;
     margin-left: auto;
@@ -38,38 +38,26 @@ body {
 .intro-text {
     text-align: center;
     font-size: 1.1em;
-    margin: 5px 0 15px; /* Ridotto margine inferiore */
+    margin: 5px 0 15px;
     color: #555;
 }
 
-/* NUOVO: Separatore ondulato */
+/* Separatore ondulato (si applica a entrambi) */
 .wavy-separator {
-    height: 15px; /* Altezza dell'onda */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0 5 Q 12.5 0, 25 5 T 50 5 T 75 5 T 100 5' stroke='%234ecdc4' stroke-width='2' fill='none'/%3E%3C/svg%3E"); /* Colore #4ecdc4 */
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0 5 Q 12.5 0, 25 5 T 50 5 T 75 5 T 100 5' stroke='%234ecdc4' stroke-width='2' fill='none'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
-    background-size: contain; /* Scala l'onda per riempire l'altezza */
-    margin-bottom: 20px; /* Spazio sotto la linea */
-}
-
-h1, h2 { /* Tolta la regola h1 qui se non è più usata per titoli */
-    text-align: center;
-    /* color: #ff6b6b; */ /* Rimosso colore default se non serve più */
+    background-size: contain;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
-   /* font-size: 2.5em; */
-}
+/* Rimosso o commentato stile per H1/H2 generico */
+/* h1, h2 { ... } */
+/* h1 { ... } */
 
-/* Titolo sezione recensioni (SENZA linee laterali di default) */
-#reviews-list h2 {
-    text-align: center;
-    font-size: 1.8em;
-    color: #4ecdc4;
-    margin: 30px 0 15px; /* Ridotto margine sotto */
-    /* Rimosso position: relative e ::before/::after se presenti */
-}
-/* Assicurati che non ci siano regole ::before/::after per #reviews-list h2 qui */
+/* Rimosso o commentato stile per #reviews-list h2 */
+/* #reviews-list h2 { ... } */
 
 
 /* Stile per l'h2 dentro il form */
@@ -80,6 +68,16 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
      border-bottom: none;
      padding-bottom: 0;
      margin-bottom: 15px;
+}
+
+/* Stile per l'immagine titolo recensioni */
+.reviews-title-image {
+    display: block;
+    margin: 25px auto 15px; /* Aggiustato leggermente margine */
+    /* MODIFICA: Ridotta drasticamente la larghezza */
+    max-width: 300px;    /* Ridotto da 400px */
+    width: 70%;          /* Ridotto da 80% */
+    height: auto;
 }
 
 
@@ -110,12 +108,12 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
 
 .btn-save { background-color: #55efc4; color: #333; }
 .btn-save:hover { background-color: #00b894; }
-.btn-save:disabled { background-color: #ccc; cursor: not-allowed; } /* Stile bottone disabilitato */
+.btn-save:disabled { background-color: #ccc; cursor: not-allowed; }
 
 .btn-cancel { background-color: #fab1a0; color: #333; }
 .btn-cancel:hover { background-color: #e17055; }
 
-.btn-delete { /* Stile presente ma funzione non implementata */
+.btn-delete {
     background-color: #ff7675; color: white;
     font-size: 0.9em; padding: 5px 10px; border-radius: 10px;
     border: 1px solid #d63031; float: right;
@@ -131,7 +129,7 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
 .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 1.1em; color: #555; }
 .form-group input[type="text"],
 .form-group input[type="url"],
-.form-group input[type="email"], /* Aggiunto per coerenza se avrai email */
+.form-group input[type="email"],
 .form-group textarea {
     width: calc(100% - 22px); padding: 10px; border: 2px solid #ccc;
     border-radius: 10px; font-family: 'Patrick Hand', cursive; font-size: 1em;
@@ -150,7 +148,7 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
 
 /* Stelle PNG nella visualizzazione */
 .star-display {
-    width: 24px; /* Stelle più piccole nella visualizzazione */
+    width: 24px;
     height: 24px;
     margin-right: 3px;
     vertical-align: middle;
@@ -163,7 +161,7 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
 .review-card {
     background-color: #fff; border: 3px solid #ffeaa7; border-radius: 20px;
     padding: 15px 20px; margin-bottom: 20px; box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
-    overflow: hidden; position: relative; /* Necessario per posizionare data */
+    overflow: hidden; position: relative;
 }
 .review-card h3 { margin-top: 0; margin-bottom: 10px; color: #ff6b6b; font-size: 1.6em; display: inline-block; }
 .review-card .map-link { font-size: 0.9em; margin-left: 10px; color: #0984e3; text-decoration: none; vertical-align: middle; }
@@ -178,52 +176,55 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
     position: absolute; top: 18px; right: 20px; font-size: 0.9em; color: #888;
 }
 
-/* Separatore HR (non più usato?) */
-.separator {
-    border: none; border-top: 3px dashed #ccc; margin: 30px 0;
-}
-
 /* Messaggio nessuna recensione */
 #no-reviews-message { text-align: center; color: #888; font-style: italic; margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; }
 
 /* --- Ordinamento recensioni --- */
 .sort-buttons {
-    text-align: right; /* Allineamento default desktop */
+    text-align: right;
     margin-bottom: 15px;
 }
 .sort-buttons .btn { font-size: 0.9em; padding: 6px 12px; }
 
 /* --- Media Queries per Mobile --- */
-@media (max-width: 768px) { /* Breakpoint per tablet/mobile grandi */
+@media (max-width: 768px) {
     .container {
-        padding: 5px 15px 15px; /* Riduci padding laterale */
+        padding: 5px 15px 15px;
     }
     .review-card h3 {
-        font-size: 1.4em; /* Riduci un po' il titolo nella card */
+        font-size: 1.4em;
     }
     .review-card .review-date {
-         top: 12px; /* Alza leggermente la data */
+         top: 12px;
          right: 15px;
          font-size: 0.8em;
     }
     .wavy-separator {
+         margin-top: 15px;
          margin-bottom: 15px;
          height: 12px;
     }
+    /* Stile immagine titolo su mobile */
+    .reviews-title-image {
+        margin-top: 20px; /* Ridotto margine sopra */
+        margin-bottom: 10px;
+        max-width: 260px; /* MODIFICA: Ridotto da 350px */
+        width: 75%;       /* MODIFICA: Ridotto da 85% */
+    }
 }
 
-@media (max-width: 600px) { /* Breakpoint per mobile piccoli */
+@media (max-width: 600px) {
     body {
-        padding: 5px; /* Riduci ancora padding corpo */
+        padding: 5px;
     }
     .container {
          margin-top: 5px;
          margin-bottom: 10px;
-         padding: 5px 10px 10px; /* Riduci ancora padding contenitore */
+         padding: 5px 10px 10px;
          border-width: 2px;
     }
     .logo-container img {
-        max-width: 90%; /* Assicura che non ecceda */
+        max-width: 90%;
     }
     .intro-text {
         font-size: 1em;
@@ -231,17 +232,16 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
     }
      .wavy-separator {
          height: 10px;
+         margin-top: 10px;
          margin-bottom: 15px;
     }
 
-    /* Rimuovi linee laterali dal titolo h2 */
-    #reviews-list h2::before,
-    #reviews-list h2::after {
-        display: none;
-    }
-    #reviews-list h2 {
-        margin: 20px 0 10px; /* Riduci margini titolo */
-        font-size: 1.6em;
+    /* Stile immagine titolo su mobile piccolo */
+     .reviews-title-image {
+        margin-top: 15px; /* Ridotto margine sopra */
+        margin-bottom: 10px;
+        max-width: 220px; /* MODIFICA: Ridotto da 300px */
+        width: 80%;       /* MODIFICA: Ridotto da 90% */
     }
 
     /* Centra i bottoni di ordinamento */
@@ -249,14 +249,8 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
         text-align: center;
         margin-bottom: 15px;
     }
-    /* Opzionale: metti i bottoni uno sotto l'altro se sono troppo larghi */
-    /*
-    .sort-buttons .btn {
-        display: block;
-        margin: 5px auto;
-        width: 80%;
-    }
-    */
+    /* Opzionale: metti i bottoni uno sotto l'altro */
+    /* .sort-buttons .btn { ... } */
 
     .btn-add { font-size: 1.1em; padding: 10px 20px; }
     .form-group label { font-size: 1em; }
@@ -265,12 +259,11 @@ h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
     .review-card { padding: 10px 15px; border-width: 2px; }
     .review-card h3 { font-size: 1.3em; margin-bottom: 5px;}
      .review-card .review-date {
-         position: static; /* Rimetti la data nel flusso normale */
-         display: block; /* Mettila su una riga sua */
-         text-align: right; /* Allineala a destra */
+         position: static;
+         display: block;
+         text-align: right;
          margin-bottom: 5px;
     }
     .review-card p { font-size: 1em; margin: 5px 0; }
-    .star-display { width: 20px; height: 20px; } /* Stelle più piccole */
-
+    .star-display { width: 20px; height: 20px; }
 }

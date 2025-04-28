@@ -20,15 +20,19 @@
             Scrivi la recensione del gelato che hai appena mangiato e guadagnerai 10€!
         </p>
 
-        <!-- NUOVO: Elemento per la linea ondulata -->
+        <!-- Primo separatore ondulato -->
         <div class="wavy-separator"></div>
 
         <button id="add-review-btn" class="btn btn-add">Dove hai mangiato il gelatino?</button>
 
+        <!-- SECONDO separatore ondulato -->
+        <div class="wavy-separator"></div>
+
         <div id="review-form-container" class="form-container hidden">
             <h2>Aggiungi una Nuova Recensione</h2>
             <form id="gelateria-form">
-                <div class="form-group">
+                <!-- ... (contenuto del form invariato) ... -->
+                 <div class="form-group">
                     <label for="gelateria-name">Nome Gelateria:</label>
                     <input type="text" id="gelateria-name" required>
                 </div>
@@ -100,10 +104,11 @@
             </form>
         </div>
 
-        <!-- RIMOSSO: <hr class="separator"> -->
-
+        <!-- Sezione Recensioni -->
         <div id="reviews-list">
-            <h2>Le Nostre Recensioni</h2>
+            <!-- SOSTITUITO H2 CON IMMAGINE -->
+            <img src="recensioni-buone.png" alt="Le Nostre Recensioni" class="reviews-title-image">
+
             <div id="sort-buttons" class="sort-buttons">
                 <button id="sort-date" class="btn">Ordina per Data</button>
                 <button id="sort-stars" class="btn">Ordina per Stelle</button>
