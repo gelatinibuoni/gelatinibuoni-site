@@ -29,15 +29,25 @@ h1 {
     font-size: 2.5em;
 }
 
-/* MODIFICA: Selezioniamo l'h2 dentro #reviews-list specificamente */
+/* Titolo sezioni recensioni centrato fra due linee */
 #reviews-list h2 {
+    position: relative;
+    text-align: center;
     font-size: 1.8em;
-    color: #4ecdc4; /* Altro colore vivace */
-    border-bottom: 2px dashed #ccc; /* Separatore tratteggiato */
-    padding-bottom: 10px;
-    /* Rimuoviamo text-align: center; se vogliamo che sia allineato come il resto del contenuto della lista */
-    text-align: left; /* O rimuovi questa riga per allineamento default */
+    color: #4ecdc4;
+    margin: 30px 0;
 }
+#reviews-list h2::before,
+#reviews-list h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: #ccc;
+}
+#reviews-list h2::before { left: 0; }
+#reviews-list h2::after  { right: 0; }
 
 /* Stile per l'h2 dentro il form */
 #review-form-container h2 {
@@ -174,7 +184,7 @@ h1 {
 /* Logo in alto */
 .logo-container {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .logo-container img {
     max-width: 200px;    /* regola la larghezza massima a piacere */
@@ -193,11 +203,11 @@ h1 {
 
 /* Stelle nella visualizzazione delle recensioni */
 .star-display {
-    width: 24px;       /* regola secondo gusto */
-    height: 24px;
+    width: 32px;    /* ← da 24px a 32px */
+    height: 32px;   /* ← da 24px a 32px */
     margin-right: 4px;
     vertical-align: middle;
-  }
+}
   
 
 /* Classe per nascondere/mostrare il form */
