@@ -1,64 +1,83 @@
 /* Stile Generale e Font */
 body {
-    font-family: 'Patrick Hand', cursive; /* Font stile "scritto a mano" */
+    font-family: 'Patrick Hand', cursive;
     background-image: url('background-buono.png');
     background-repeat: repeat;
     color: #333;
     line-height: 1.6;
     margin: 0;
-    /* Riduciamo o eliminiamo il padding globale del body se non serve */
-    padding: 5px 10px; /* Riduci padding generale, soprattutto quello sopra/sotto */
+    padding: 5px 10px;
+    overflow-x: hidden; /* Previene scroll orizzontale su mobile */
 }
 
 .container {
     max-width: 800px;
-    /* Riduciamo il margine superiore del container */
-    margin: 5px auto 20px; /* Ridotto margine sopra a 5px, lasciato 20px sotto */
+    margin: 5px auto 20px;
     background-color: #fff;
-    /* Riduciamo il padding interno superiore del container */
-    padding: 5px 30px 15px; /* Ridotto padding sopra a 5px, aumentato leggermente sotto */
-    border-radius: 25px; /* Bordi molto arrotondati */
+    padding: 5px 30px 15px;
+    border-radius: 25px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-    border: 3px solid #ccc; /* Bordo spesso e semplice */
+    border: 3px solid #ccc;
 }
 
-
-h1, h2 {
+/* Logo in alto */
+.logo-container {
     text-align: center;
-    color: #ff6b6b; /* Un colore vivace per i titoli */
+    margin-bottom: 0;
+}
+.logo-container img {
+    max-width: 500px;
+    width: 100%; /* Rende l'immagine responsiva */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Testo di invito sotto il logo */
+.intro-text {
+    text-align: center;
+    font-size: 1.1em;
+    margin: 5px 0 15px; /* Ridotto margine inferiore */
+    color: #555;
+}
+
+/* NUOVO: Separatore ondulato */
+.wavy-separator {
+    height: 15px; /* Altezza dell'onda */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0 5 Q 12.5 0, 25 5 T 50 5 T 75 5 T 100 5' stroke='%234ecdc4' stroke-width='2' fill='none'/%3E%3C/svg%3E"); /* Colore #4ecdc4 */
+    background-repeat: repeat-x;
+    background-size: contain; /* Scala l'onda per riempire l'altezza */
+    margin-bottom: 20px; /* Spazio sotto la linea */
+}
+
+h1, h2 { /* Tolta la regola h1 qui se non è più usata per titoli */
+    text-align: center;
+    /* color: #ff6b6b; */ /* Rimosso colore default se non serve più */
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 2.5em;
+h1 { /* Questa regola non sembra più necessaria se H1 è solo per il logo */
+   /* font-size: 2.5em; */
 }
 
-/* Titolo sezioni recensioni centrato fra due linee */
+/* Titolo sezione recensioni (SENZA linee laterali di default) */
 #reviews-list h2 {
-    position: relative;
     text-align: center;
     font-size: 1.8em;
     color: #4ecdc4;
-    margin: 30px 0;
+    margin: 30px 0 15px; /* Ridotto margine sotto */
+    /* Rimosso position: relative e ::before/::after se presenti */
 }
-#reviews-list h2::before,
-#reviews-list h2::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 30%;
-    height: 1px;
-    background: #ccc;
-}
-#reviews-list h2::before { left: 0; }
-#reviews-list h2::after  { right: 0; }
+/* Assicurati che non ci siano regole ::before/::after per #reviews-list h2 qui */
+
 
 /* Stile per l'h2 dentro il form */
 #review-form-container h2 {
      font-size: 1.8em;
      color: #4ecdc4;
-     text-align: center; /* Manteniamo centrato qui */
-     border-bottom: none; /* Togliamo il tratteggio qui se non serve */
+     text-align: center;
+     border-bottom: none;
      padding-bottom: 0;
      margin-bottom: 15px;
 }
@@ -66,10 +85,10 @@ h1 {
 
 /* Bottoni */
 .btn {
-    font-family: 'Patrick Hand', cursive; /* Stesso font */
+    font-family: 'Patrick Hand', cursive;
     padding: 12px 25px;
     border: 2px solid #555;
-    border-radius: 15px; /* Arrotondamento */
+    border-radius: 15px;
     cursor: pointer;
     font-size: 1.1em;
     transition: all 0.2s ease-in-out;
@@ -77,264 +96,181 @@ h1 {
 }
 
 .btn-add {
-    background-color: #ffeaa7; /* Giallino chiaro */
+    background-color: #ffeaa7;
     color: #333;
     display: block;
     width: fit-content;
-    margin: 20px auto; /* Centrato */
+    margin: 20px auto;
     font-size: 1.3em;
 }
-
 .btn-add:hover {
     background-color: #fdcb6e;
-    transform: scale(1.05); /* Leggero ingrandimento */
+    transform: scale(1.05);
 }
 
-.btn-save {
-    background-color: #55efc4; /* Verde menta */
-    color: #333;
-}
-.btn-save:hover {
-    background-color: #00b894;
-}
+.btn-save { background-color: #55efc4; color: #333; }
+.btn-save:hover { background-color: #00b894; }
+.btn-save:disabled { background-color: #ccc; cursor: not-allowed; } /* Stile bottone disabilitato */
 
-.btn-cancel {
-    background-color: #fab1a0; /* Rosino */
-    color: #333;
-}
-.btn-cancel:hover {
-    background-color: #e17055;
-}
+.btn-cancel { background-color: #fab1a0; color: #333; }
+.btn-cancel:hover { background-color: #e17055; }
 
-/* Bottone elimina non è implementato nell'HTML/JS attuale, ma lo stile c'è */
-.btn-delete {
-    background-color: #ff7675; /* Rosso chiaro */
-    color: white;
-    font-size: 0.9em;
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: 1px solid #d63031;
-    float: right; /* Lo mettiamo a destra nella card */
+.btn-delete { /* Stile presente ma funzione non implementata */
+    background-color: #ff7675; color: white;
+    font-size: 0.9em; padding: 5px 10px; border-radius: 10px;
+    border: 1px solid #d63031; float: right;
 }
-.btn-delete:hover {
-     background-color: #d63031;
-}
+.btn-delete:hover { background-color: #d63031; }
 
 /* Form */
 .form-container {
-    background-color: #fdfdfd;
-    border: 2px dashed #4ecdc4; /* Bordo tratteggiato */
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    background-color: #fdfdfd; border: 2px dashed #4ecdc4;
+    padding: 20px; border-radius: 15px; margin-top: 20px; margin-bottom: 30px;
 }
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #555;
-}
-
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 1.1em; color: #555; }
 .form-group input[type="text"],
 .form-group input[type="url"],
+.form-group input[type="email"], /* Aggiunto per coerenza se avrai email */
 .form-group textarea {
-    width: calc(100% - 22px); /* Larghezza piena meno padding e bordo */
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 10px; /* Arrotondato */
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1em;
+    width: calc(100% - 22px); padding: 10px; border: 2px solid #ccc;
+    border-radius: 10px; font-family: 'Patrick Hand', cursive; font-size: 1em;
 }
-
-.form-group textarea {
-    resize: vertical; /* Permetti solo ridimensionamento verticale */
-}
-
-.form-buttons {
-    text-align: center;
-    margin-top: 20px;
-}
+.form-group textarea { resize: vertical; }
+.form-buttons { text-align: center; margin-top: 20px; }
 
 /* Radio buttons */
-.radio-group label {
-    display: inline-block; /* Mette le opzioni sulla stessa riga */
-    margin-right: 15px;
-    font-weight: normal;
-    font-size: 1em;
-    cursor: pointer;
-}
-.radio-group input[type="radio"] {
-    margin-right: 5px;
-    cursor: pointer;
-    vertical-align: middle; /* Allinea meglio con il testo */
-}
+.radio-group label { display: inline-block; margin-right: 15px; font-weight: normal; font-size: 1em; cursor: pointer; }
+.radio-group input[type="radio"] { margin-right: 5px; cursor: pointer; vertical-align: middle; }
 
-/* Stelle "Cartonesche" */
+/* Stelle PNG nel form */
 .star-rating .star {
-    width: 32px;     /* regola se vuoi */
-    height: 32px;
-    cursor: pointer;
-    margin-right: 5px;
-    vertical-align: middle;
+    width: 32px; height: 32px; cursor: pointer; margin-right: 5px; vertical-align: middle;
 }
 
-/* Logo in alto */
-.logo-container {
-    text-align: center;
-    /* Riduciamo o eliminiamo il margine sotto il logo */
-    margin-bottom: 0; /* Tolto margine sotto */
-  }
-  .logo-container img {
-    max-width: 500px;    /* regola la larghezza massima a piacere */
-    width: 100%;
-    height: auto;
-    display: block; /* Cambiato in block per gestire meglio i margini */
-    margin-left: auto;  /* Necessario con display:block per centrare */
-    margin-right: auto; /* Necessario con display:block per centrare */
-  }
-
-  /* Testo di invito sotto il logo */
-  .intro-text {
-    text-align: center;
-    font-size: 1.1em;
-    /* Riduciamo drasticamente il margine sopra questo testo */
-    margin: 5px 0 20px; /* Ridotto margine sopra a 5px */
-    color: #555;
-  }
-  
-
-/* Stelle nella visualizzazione delle recensioni */
+/* Stelle PNG nella visualizzazione */
 .star-display {
-    width: 32px;    /* ← da 24px a 32px */
-    height: 32px;   /* ← da 24px a 32px */
-    margin-right: 4px;
+    width: 24px; /* Stelle più piccole nella visualizzazione */
+    height: 24px;
+    margin-right: 3px;
     vertical-align: middle;
 }
-  
 
 /* Classe per nascondere/mostrare il form */
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
 /* Stile delle Recensioni Visualizzate */
 .review-card {
-    background-color: #fff;
-    border: 3px solid #ffeaa7; /* Bordo giallino */
-    border-radius: 20px;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
-    overflow: hidden; /* Per contenere il float del bottone elimina (se ci fosse) */
+    background-color: #fff; border: 3px solid #ffeaa7; border-radius: 20px;
+    padding: 15px 20px; margin-bottom: 20px; box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden; position: relative; /* Necessario per posizionare data */
+}
+.review-card h3 { margin-top: 0; margin-bottom: 10px; color: #ff6b6b; font-size: 1.6em; display: inline-block; }
+.review-card .map-link { font-size: 0.9em; margin-left: 10px; color: #0984e3; text-decoration: none; vertical-align: middle; }
+.review-card .map-link:hover { text-decoration: underline; }
+.review-card p { margin: 8px 0; font-size: 1.1em; clear: both; }
+.review-card .label { font-weight: bold; color: #555; margin-right: 5px; }
+.review-card .notes { margin-top: 10px; font-style: italic; background-color: #f9f9f9; padding: 10px 12px; border-radius: 8px; border: 1px dashed #eee; clear: both; }
+.review-card .notes .label { font-style: normal; }
+
+/* Data sulla destra della card */
+.review-card .review-date {
+    position: absolute; top: 18px; right: 20px; font-size: 0.9em; color: #888;
 }
 
-.review-card h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #ff6b6b;
-    font-size: 1.6em;
-    display: inline-block; /* Per non andare a capo dopo il nome */
-}
-
-.review-card .map-link {
-    font-size: 0.9em;
-    margin-left: 10px;
-    color: #0984e3;
-    text-decoration: none;
-    vertical-align: middle; /* Allinea meglio con il titolo */
-}
-.review-card .map-link:hover {
-    text-decoration: underline;
-}
-
-.review-card p {
-    margin: 8px 0; /* Aumentato leggermente margine verticale */
-    font-size: 1.1em;
-    clear: both; /* Assicura che i p vadano sotto elementi float (come btn-delete) */
-}
-
-.review-card .label {
-    font-weight: bold;
-    color: #555;
-    margin-right: 5px; /* Spazio tra label e valore */
-}
-
-.review-card .stars-display span {
-     font-size: 1.5em; /* Stelle più piccole nella visualizzazione */
-     margin-right: 2px;
-     text-shadow:
-       -1px -1px 0 #888,
-        1px -1px 0 #888,
-       -1px  1px 0 #888,
-        1px  1px 0 #888;
-     vertical-align: middle; /* Allinea meglio con il testo */
-}
-
-.review-card .stars-display .filled {
-    color: #ff9900; /* Arancione */
-}
-.review-card .stars-display .empty {
-     color: #ddd; /* Grigio */
-}
-
-.review-card .notes {
-    margin-top: 10px;
-    font-style: italic;
-    background-color: #f9f9f9;
-    padding: 10px 12px; /* Aumentato padding */
-    border-radius: 8px;
-    border: 1px dashed #eee;
-    clear: both;
-}
-/* Stile aggiuntivo per la label dentro le note */
-.review-card .notes .label {
-    font-style: normal; /* Togliamo l'italico dalla label */
-}
-
-
-/* Separatore */
+/* Separatore HR (non più usato?) */
 .separator {
-    border: none;
-    border-top: 3px dashed #ccc; /* Separatore tratteggiato */
-    margin: 30px 0;
+    border: none; border-top: 3px dashed #ccc; margin: 30px 0;
 }
 
 /* Messaggio nessuna recensione */
-#no-reviews-message {
-    text-align: center;
-    color: #888;
-    font-style: italic;
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-}
+#no-reviews-message { text-align: center; color: #888; font-style: italic; margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; }
+
 /* --- Ordinamento recensioni --- */
 .sort-buttons {
-    text-align: right;
+    text-align: right; /* Allineamento default desktop */
     margin-bottom: 15px;
-  }
-  .sort-buttons .btn {
-    font-size: 0.9em;
-    padding: 6px 12px;
-  }
-  
-  /* --- Data sulla destra della card --- */
-  .review-card {
-    position: relative; /* per posizionare la data assoluta */
-  }
-  .review-card .review-date {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 0.9em;
-    color: #888;
-  }
-  
+}
+.sort-buttons .btn { font-size: 0.9em; padding: 6px 12px; }
+
+/* --- Media Queries per Mobile --- */
+@media (max-width: 768px) { /* Breakpoint per tablet/mobile grandi */
+    .container {
+        padding: 5px 15px 15px; /* Riduci padding laterale */
+    }
+    .review-card h3 {
+        font-size: 1.4em; /* Riduci un po' il titolo nella card */
+    }
+    .review-card .review-date {
+         top: 12px; /* Alza leggermente la data */
+         right: 15px;
+         font-size: 0.8em;
+    }
+    .wavy-separator {
+         margin-bottom: 15px;
+         height: 12px;
+    }
+}
+
+@media (max-width: 600px) { /* Breakpoint per mobile piccoli */
+    body {
+        padding: 5px; /* Riduci ancora padding corpo */
+    }
+    .container {
+         margin-top: 5px;
+         margin-bottom: 10px;
+         padding: 5px 10px 10px; /* Riduci ancora padding contenitore */
+         border-width: 2px;
+    }
+    .logo-container img {
+        max-width: 90%; /* Assicura che non ecceda */
+    }
+    .intro-text {
+        font-size: 1em;
+        margin: 5px 0 10px;
+    }
+     .wavy-separator {
+         height: 10px;
+         margin-bottom: 15px;
+    }
+
+    /* Rimuovi linee laterali dal titolo h2 */
+    #reviews-list h2::before,
+    #reviews-list h2::after {
+        display: none;
+    }
+    #reviews-list h2 {
+        margin: 20px 0 10px; /* Riduci margini titolo */
+        font-size: 1.6em;
+    }
+
+    /* Centra i bottoni di ordinamento */
+    .sort-buttons {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    /* Opzionale: metti i bottoni uno sotto l'altro se sono troppo larghi */
+    /*
+    .sort-buttons .btn {
+        display: block;
+        margin: 5px auto;
+        width: 80%;
+    }
+    */
+
+    .btn-add { font-size: 1.1em; padding: 10px 20px; }
+    .form-group label { font-size: 1em; }
+    .radio-group label { font-size: 0.9em; margin-right: 10px; }
+
+    .review-card { padding: 10px 15px; border-width: 2px; }
+    .review-card h3 { font-size: 1.3em; margin-bottom: 5px;}
+     .review-card .review-date {
+         position: static; /* Rimetti la data nel flusso normale */
+         display: block; /* Mettila su una riga sua */
+         text-align: right; /* Allineala a destra */
+         margin-bottom: 5px;
+    }
+    .review-card p { font-size: 1em; margin: 5px 0; }
+    .star-display { width: 20px; height: 20px; } /* Stelle più piccole */
+
+}
