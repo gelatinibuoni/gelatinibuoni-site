@@ -75,7 +75,7 @@ body {
     display: block;
     margin: 25px auto 15px; /* Aggiustato leggermente margine */
     /* MODIFICA: Ridotta drasticamente la larghezza */
-    max-width: 300px;    /* Ridotto da 400px */
+    max-width: 400px;    /* Ridotto da 400px */
     width: 100%;          /* Ridotto da 80% */
     height: auto;
 }
@@ -208,8 +208,8 @@ body {
     .reviews-title-image {
         margin-top: 20px; /* Ridotto margine sopra */
         margin-bottom: 10px;
-        max-width: 260px; /* MODIFICA: Ridotto da 350px */
-        width: 75%;       /* MODIFICA: Ridotto da 85% */
+        max-width: 380px; /* MODIFICA: Ridotto da 350px */
+        width: 100%;       /* MODIFICA: Ridotto da 85% */
     }
 }
 
@@ -240,8 +240,8 @@ body {
      .reviews-title-image {
         margin-top: 15px; /* Ridotto margine sopra */
         margin-bottom: 10px;
-        max-width: 220px; /* MODIFICA: Ridotto da 300px */
-        width: 80%;       /* MODIFICA: Ridotto da 90% */
+        max-width: 300px; /* MODIFICA: Ridotto da 300px */
+        width: 90%;       /* MODIFICA: Ridotto da 90% */
     }
 
     /* Centra i bottoni di ordinamento */
