@@ -76,7 +76,7 @@ body {
     margin: 25px auto 15px; /* Aggiustato leggermente margine */
     /* MODIFICA: Ridotta drasticamente la larghezza */
     max-width: 300px;    /* Ridotto da 400px */
-    width: 70%;          /* Ridotto da 80% */
+    width: 100%;          /* Ridotto da 80% */
     height: auto;
 }
 
