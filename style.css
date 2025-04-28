@@ -13,7 +13,7 @@ body {
     max-width: 800px;
     margin: 20px auto;
     background-color: #fff;
-    padding: 25px 30px;
+    padding: 10px 30px;
     border-radius: 25px; /* Bordi molto arrotondati */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     border: 3px solid #ccc; /* Bordo spesso e semplice */
