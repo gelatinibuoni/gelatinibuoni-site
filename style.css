@@ -191,14 +191,14 @@ h1 {
   }
   
 
-.star-rating span:hover,
-.star-rating span.hovered {
-    color: #ffcc00; /* Giallo oro per hover */
-}
-
-.star-rating span.selected {
-    color: #ff9900; /* Arancione per selezionato */
-}
+/* Stelle nella visualizzazione delle recensioni */
+.star-display {
+    width: 24px;       /* regola secondo gusto */
+    height: 24px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  
 
 /* Classe per nascondere/mostrare il form */
 .hidden {
